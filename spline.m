@@ -9,7 +9,7 @@
 %output: Spline, Geschwindigkeit, Beschleunigung, Ruck, Zeiten (zu jedem
 %Arrayeintrag den t-Wert), passendeStelle (Arraypositionen der
 %Input-Punkte)
-function [spline,geschwindigkeit,beschleunigung,ruck,time,passendeStelle] = spline(punkte,h,TimeGiven,plotten)
+function [spline,geschwindigkeit,beschleunigung,ruck,time,passendeStelle,a,b,c,d] = spline(punkte,h,TimeGiven,plotten)
     %Anzahl der Segmente (n) berechnen 
     n = length(h);
     
