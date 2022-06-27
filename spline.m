@@ -10,7 +10,9 @@
 %Arrayeintrag den t-Wert), passendeStelle (Arraypositionen der
 %Input-Punkte)
 function [spline,geschwindigkeit,beschleunigung,ruck,time,passendeStelle,a,b,c,d] = spline(punkte,h,TimeGiven,plotten)
-    %Anzahl der Segmente (n) berechnen 
+    
+    
+   %Anzahl der Segmente (n) berechnen 
     n = length(h);
     
     %Faktor für die Anzahl der Schritte zwischen zwei ganzen Zahlen 
@@ -64,6 +66,7 @@ function [spline,geschwindigkeit,beschleunigung,ruck,time,passendeStelle,a,b,c,d
     %Varibalen für qerg bestimmen
     d = punkte(1:n);
     b = [0,ableitungen2/2,0];
+    disp(b);
     a = zeros(1,n);
     for i = 1:n
         a(i) = (2*b(i+1)-2*b(i))/(6*h(i));
@@ -162,4 +165,6 @@ function [spline,geschwindigkeit,beschleunigung,ruck,time,passendeStelle,a,b,c,d
         xlabel("Time");
         ylabel("Jerk");
     end
+    
+   
 end 
